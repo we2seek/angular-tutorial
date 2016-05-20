@@ -1,0 +1,15 @@
+{
+  "name": "angular-crud",
+  "authors": [
+    "Vitaliy Timchenko"
+  ],
+  "description": "Test CRUD operations",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}

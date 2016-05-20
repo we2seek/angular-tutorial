@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Academy &mdash; Tutorial</title>
+
+    <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <!-- Twitter Bootstrap-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="GalleryModule" ng-controller="MainController">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 main-block">
+                <h1 ng-bind="page_title | uppercase">Photos list</h1>
+
+            </div>
+        </div>
+
+        <!-- Images -->
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="photo in photosList">
+                <div class="thumbnail">
+                    <a href="{{photo.url}}">
+                        <img ng-src="{{photo.thumbnailUrl}}" alt="Image {{photo.id}}">    
+                    </a>
+
+                    <div class="caption">
+                        <h3>{{photo.title}}</h3>
+                        <p>
+                            Album ID: <span ng-bind="photo.albumId"></span><br>
+                            ID: <span ng-bind="photo.id"></span>    
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row -->
+
+    </div> <!-- container -->
+
+    <!-- AngulatJS library -->
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/photos.js"></script>
+</body>
+</html>

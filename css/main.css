@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext);
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*
+#cdcab9
+#d6d3c4
+#dfded4
+#432f21
+#ca171b
+*/
+
+body {
+    background-color: #dfded4;
+}
+
+.main-block {
+    background-color: #cdcab9;
+}
