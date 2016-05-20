@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Academy &mdash; Tutorial</title>
+
+    <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <!-- Twitter Bootstrap-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="AppMarketApp">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="container">
+            <h1>App Market</h1>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main" ng-controller="MainController">
+        <div class="container">
+            <div class="card" ng-repeat="app in apps">
+                <app-info info="app"></app-info>
+                <install-app></install-app>
+            </div>
+        </div>
+    </div>
+
+    <!-- AngulatJS library -->
+    <script src="bower_components/angular/angular.js"></script>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Dirictives -->
+    <script src="js/directives/appInfo.js"></script>
+    <script src="js/directives/installApp.js"></script>
+</body>
+</html>
