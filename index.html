@@ -13,36 +13,30 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-app="AppMarketApp">
+<body ng-app="GalleryApp">
 
-    <!-- HEADER -->
     <div class="header">
         <div class="container">
-            <h1>App Market</h1>
+            <a href="/#/">
+                <img src="http://placehold.it/80x80"> &#12501; &#65387; &#12488; &#12501; &#65387; &#12488;
+            </a>
         </div>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="main" ng-controller="MainController">
-        <div class="container">
-            <div class="card" ng-repeat="app in apps">
-                <app-info info="app"></app-info>
-                <install-app></install-app>
-            </div>
-        </div>
-    </div>
-
+    
+    <div ng-view></div>
+    
     <!-- AngulatJS library -->
-    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
 
     <!-- Modules -->
     <script src="js/app.js"></script>
 
     <!-- Controllers -->
-    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/PhotoController.js"></script>
 
-    <!-- Dirictives -->
-    <script src="js/directives/appInfo.js"></script>
-    <script src="js/directives/installApp.js"></script>
+    <!-- Services -->
+    <script src="js/services/photos.js"></script>
 </body>
 </html>
