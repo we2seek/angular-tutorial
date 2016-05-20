@@ -6,29 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Code Academy &mdash; Tutorial</title>
 
-    <!-- Google fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!-- Twitter Bootstrap-->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-app="AppMarketApp">
+<body ng-app="ForecastApp">
 
-    <!-- HEADER -->
-    <div class="header">
-        <div class="container">
-            <h1>App Market</h1>
-        </div>
-    </div>
-
-    <!-- MAIN CONTENT -->
     <div class="main" ng-controller="MainController">
         <div class="container">
-            <div class="card" ng-repeat="app in apps">
-                <app-info info="app"></app-info>
-                <install-app></install-app>
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-7">
+                    <h1>{{ fiveDay.city_name }}</h1>
+                    <h2>5-day forecast</h2>
+                    <div class="forecast" ng-repeat="day in fiveDay.days">
+                        <div class="day row">
+
+                            <!-- datetime -->
+                            <div class="weekday col-xs-4">
+                                {{day.datetime | date }}
+                            </div>
+
+
+                            <!-- icon -->
+                            <div class="weather col-xs-3">
+                                <img ng-src="{{day.icon}}">
+                            </div>
+
+                            <div class="col-xs-1"></div>
+
+
+                            <!-- high -->
+                            <div class="high col-xs-2">
+                                {{day.high}}
+                            </div>
+
+
+                            <!-- low -->
+                            <div class="low col-xs-2">
+                                {{day.low}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -41,8 +63,7 @@
     <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
 
-    <!-- Dirictives -->
-    <script src="js/directives/appInfo.js"></script>
-    <script src="js/directives/installApp.js"></script>
+    <!-- Services -->
+    <script src="js/services/forecast.js"></script>
 </body>
 </html>

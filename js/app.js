@@ -1,3 +1,2 @@
 'use strict'
-
-var app = angular.module('AppMarketApp', []);
+var app = angular.module('ForecastApp', []);
